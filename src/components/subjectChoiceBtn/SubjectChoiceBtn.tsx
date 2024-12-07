@@ -1,9 +1,13 @@
-import React from 'react'
+import { Subject } from '../../types/Types'
 
-export default function SubjectChoiceBtn() {
+interface Props {
+    subjectData: Subject
+}
+
+export default function SubjectChoiceBtn({subjectData} : Props) {
   return (
-    <div>
-      
-    </div>
+    <button>
+        {subjectData.name}
+    </button>
   )
 }

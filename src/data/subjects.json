@@ -1,20 +1,19 @@
-{
-    "subjects": [
-        {
-            "title": "HTML",
-            "img": "./assets/icon-html.svg"
-        },
-        {
-            "title": "CSS",
-            "img": "./assets/icon-css.svg"
-        },
-        {
-            "title": "Javascript",
-            "img": "./assets/icon-javascript.svg"
-        },
-        {
-            "title": "Accessibility",
-            "img": "./assets/icon-accessibility.svg"
-        }
-    ]
-}
+[
+    
+    {
+        "name": "HTML",
+        "img": "./assets/icon-html.svg"
+    },
+    {
+        "name": "CSS",
+        "img": "./assets/icon-css.svg"
+    },
+    {
+        "name": "Javascript",
+        "img": "./assets/icon-javascript.svg"
+    },
+    {
+        "name": "Accessibility",
+        "img": "./assets/icon-accessibility.svg"
+    }
+]
