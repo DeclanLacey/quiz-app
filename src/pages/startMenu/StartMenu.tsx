@@ -1,17 +1,16 @@
 import SubjectsData from "../../data/subjects.json"
-import SubjectChoiceBtn from '../../components/subjectChoiceBtn/SubjectChoiceBtn'
+import {SubjectChoiceBtn} from '../../components/subjectChoiceBtn/SubjectChoiceBtn'
 import { Subject } from '../../types/Types'
 
 function renderSubjectBtns(data : Subject[]) {
-  const subjectBtnElements = data.map((subject) => {
-    return <SubjectChoiceBtn subjectData={subject} />
+  const subjectBtnElements = data.map((subject, index) => {
+    return <SubjectChoiceBtn key={index} subjectData={subject} />
   })
 
   return subjectBtnElements
 }
 
 function StartMenu() {
-
 
   return (
     <div>

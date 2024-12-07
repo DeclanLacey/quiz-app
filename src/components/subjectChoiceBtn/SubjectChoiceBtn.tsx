@@ -4,10 +4,19 @@ interface Props {
     subjectData: Subject
 }
 
-export default function SubjectChoiceBtn({subjectData} : Props) {
+function handleSubjectBtnClick() {
+
+}
+
+function SubjectChoiceBtn({subjectData} : Props) {
   return (
-    <button>
-        {subjectData.name}
-    </button>
+    <a>
+      <button>
+          {subjectData.name}
+      </button>
+    </a>
+    
   )
 }
+
+export {SubjectChoiceBtn, handleSubjectBtnClick}
