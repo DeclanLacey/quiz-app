@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom'
 import { Subject } from '../../types/Types'
 
 interface Props {
@@ -10,12 +11,12 @@ function handleSubjectBtnClick() {
 
 function SubjectChoiceBtn({subjectData} : Props) {
   return (
-    <a>
+    <NavLink to="/question">
       <button>
+          <img src={subjectData.img} />
           {subjectData.name}
       </button>
-    </a>
-    
+    </NavLink>
   )
 }
 
