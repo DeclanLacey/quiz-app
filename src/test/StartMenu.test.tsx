@@ -1,11 +1,7 @@
 import {render, screen} from "@testing-library/react"
 import {renderSubjectBtns, StartMenu} from "../pages/startMenu/StartMenu"
 import { MemoryRouter } from "react-router-dom";
-
-function getRandomString() {
-    return (Math.random() + 1).toString(36).substring(7);
-}
-
+import { getRandomString } from "../utils/utils";
 
 const mockData = [
     {

@@ -11,7 +11,7 @@ function handleSubjectBtnClick() {
 
 function SubjectChoiceBtn({subjectData} : Props) {
   return (
-    <NavLink to="/question">
+    <NavLink to="/question" state={subjectData.name}>
       <button>
           <img src={subjectData.img} />
           {subjectData.name}
