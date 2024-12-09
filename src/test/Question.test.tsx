@@ -1,8 +1,9 @@
-import { MemoryRouter } from "react-router-dom"
+import { MemoryRouter, Route, Routes } from "react-router-dom"
 import { Question } from "../pages/question/Question"
-import { render, screen } from "@testing-library/react"
+import { fireEvent, render, screen } from "@testing-library/react"
 import { SubjectChoiceBtn } from "../components/subjectChoiceBtn/SubjectChoiceBtn"
 import { getRandomNumber, getRandomString } from "../utils/utils"
+import routeData from 'react-router-dom'
 
 const mockData = [
     {
@@ -23,23 +24,27 @@ const mockData = [
     }
 ]
 
-
 describe('Testing for Question page', () => {
     const randomNumber = getRandomNumber(mockData.length - 1)
     const data = mockData[randomNumber]
-    test("Should show the correct category title", () => {
+    test("Should show the correct category title", async () => {
+
+        const name = data.name
         render(
-            <MemoryRouter>
-                <SubjectChoiceBtn subjectData={data} />
+            <MemoryRouter initialEntries={['/']}>
+                <Routes>
+                    <Route path="/" element={<SubjectChoiceBtn subjectData={data} />} />
+                    <Route path="/question" element={<Question />} />
+                </Routes>
             </MemoryRouter>
         )
 
-        const name = data.name
-        const link = screen.getByText(name)
-        link.click()
+        const link = screen.getByText(data.name);
+        fireEvent.click(link);  // Simulate user clicking the link
 
-        const nameOnScreen = screen.getByText(name)
-        expect(nameOnScreen).toBeInTheDocument()
-
+        const nameText = screen.queryByText(new RegExp(name, "i"))
+        expect(nameText).toBeVisible()
     })
+
+    
 })
