@@ -1,10 +1,10 @@
-import SubjectsData from "../../data/subjects.json"
+import quizData from "../../data/data.json"
 import {SubjectChoiceBtn} from '../../components/subjectChoiceBtn/SubjectChoiceBtn'
-import { Subject } from '../../types/Types'
+import { Quiz } from '../../types/Types'
 
-function renderSubjectBtns(data : Subject[]) {
-  const subjectBtnElements = data.map((subject, index) => {
-    return <SubjectChoiceBtn key={index} subjectData={subject} />
+function renderSubjectBtns(data : Quiz[]) {
+  const subjectBtnElements = data.map((subjectQuiz, index) => {
+    return <SubjectChoiceBtn key={index} quizData={subjectQuiz} />
   })
 
   return subjectBtnElements
@@ -17,7 +17,7 @@ function StartMenu() {
       <h1>Welcome to the Frontend Quiz!</h1>
       <h2>Pick a subject to get started.</h2>
       <div>
-        {renderSubjectBtns(SubjectsData)}
+        {renderSubjectBtns(quizData)}
       </div>
     </div>
   )

@@ -1,20 +1,20 @@
 import { NavLink } from 'react-router-dom'
-import { Subject } from '../../types/Types'
+import { Quiz } from '../../types/Types'
 
 interface Props {
-    subjectData: Subject
+  quizData: Quiz
 }
 
 function handleSubjectBtnClick() {
 
 }
 
-function SubjectChoiceBtn({subjectData} : Props) {
+function SubjectChoiceBtn({quizData} : Props) {
   return (
-    <NavLink to="/question" state={subjectData.name}>
+    <NavLink to="/question" state={quizData.title}>
       <button>
-          <img src={subjectData.img} />
-          {subjectData.name}
+          <img src={quizData.icon} />
+          {quizData.title}
       </button>
     </NavLink>
   )

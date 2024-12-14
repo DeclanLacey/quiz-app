@@ -1,26 +1,9 @@
 import {render, screen} from "@testing-library/react"
 import {renderSubjectBtns, StartMenu} from "../pages/startMenu/StartMenu"
 import { MemoryRouter } from "react-router-dom";
-import { getRandomString } from "../utils/utils";
+import quizData from "../data/data.json"
 
-const mockData = [
-    {
-        "name": getRandomString(),
-        "img": "./assets/icon-html.svg"
-    },
-    {
-        "name": getRandomString(),
-        "img": "./assets/icon-css.svg"
-    },
-    {
-        "name": getRandomString(),
-        "img": "./assets/icon-javascript.svg"
-    },
-    {
-        "name": getRandomString(),
-        "img": "./assets/icon-accessibility.svg"
-    }
-]
+const mockData = quizData
 
 describe("Testing StartMenu", () => {
     test("Title should be visible", () => {
@@ -55,7 +38,7 @@ describe("Testing StartMenu", () => {
         render(<MemoryRouter><section>{renderSubjectBtns(mockData)}</section></MemoryRouter>)
 
         mockData.forEach((subject) => {
-            expect(screen.getByText(subject.name)).toBeInTheDocument()
+            expect(screen.getByText(subject.title)).toBeInTheDocument()
         })
     })
 
